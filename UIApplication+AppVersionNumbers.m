@@ -21,9 +21,11 @@
     NSString *build = [self appBuildNumber];
     NSString *version = [self appVersionNumber];
 
-    if ( build == nil || [build length] == 0 || [version isEqualToString:build]) {
+    if (version == nil || [version length] == 0 ) {
+        return build; // it doesn't matters if it's nil
+    } else if (build == nil || [build length] == 0 || [version isEqualToString:build]) { // version can't be nil
         return version;
-    } else {
+    } else { // version & build not nil and not @"" and not equal
         return [NSString stringWithFormat:@"%@ (%@)", version, build];
     }
 }

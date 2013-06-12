@@ -9,5 +9,8 @@
 
 @interface UIApplication (AppVersionNumbers)
 
++ (NSString *) appVersionNumber;
++ (NSString *) appBuildNumber;
++ (NSString *) appVersion;
 
 @end
